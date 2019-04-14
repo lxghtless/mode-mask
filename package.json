@@ -1,0 +1,38 @@
+{
+  "name": "mode-mask",
+  "version": "1.0.0",
+  "description": "Manage mode combinations",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "nyc --reporter=lcov --reporter=text ava -v",
+    "lint": "xo --fix --prettier --env=node --env=ava",
+    "verify": "npm run lint && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxghtless/mode-mask.git"
+  },
+  "keywords": [
+    "mode",
+    "mask"
+  ],
+  "author": {
+    "name": "lxghtless",
+    "email": "lxghtl3ss@gmail.com",
+    "url": "https://github.com/lxghtless"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lxghtless/mode-mask/issues"
+  },
+  "homepage": "https://github.com/lxghtless/mode-mask#readme",
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "nyc": "^13.3.0",
+    "xo": "^0.24.0"
+  },
+  "dependencies": {}
+}
