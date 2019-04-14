@@ -2,6 +2,10 @@
 
 > Manage mode combinations
 
+
+[![CircleCI](https://circleci.com/gh/lxghtless/mode-mask/tree/master.svg?style=svg)](https://circleci.com/gh/lxghtless/mode-mask/tree/master)
+
+
 ### Install
 
 ```
