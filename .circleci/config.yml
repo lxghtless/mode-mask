@@ -50,10 +50,7 @@ workflows:
   version: 2
   test-deploy:
     jobs:
-      - test:
-          filters:
-            tags:
-              only: /^v.*/
+      - test
       - deploy:
           requires:
             - test
@@ -61,7 +58,4 @@ workflows:
             tags:
               only: /^v.*/
             branches:
-              ignore: /.*/
-  test:
-    jobs:
-      - test
+              only: master
