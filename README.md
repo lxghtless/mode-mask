@@ -3,7 +3,7 @@
 > Manage mode combinations
 
 
-[![CircleCI](https://circleci.com/gh/lxghtless/mode-mask/tree/master.svg?style=svg)](https://circleci.com/gh/lxghtless/mode-mask/tree/master)
+[![npm version](https://badge.fury.io/js/mode-mask.svg)](https://badge.fury.io/js/mode-mask)  [![CircleCI](https://circleci.com/gh/lxghtless/mode-mask/tree/master.svg?style=svg)](https://circleci.com/gh/lxghtless/mode-mask/tree/master)
 
 
 ### Install
