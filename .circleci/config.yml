@@ -38,7 +38,7 @@ jobs:
           path: coverage
 
       - codecov/upload:
-          file: {{ coverage_report_filepath }}
+          file: coverage/lcov.info
 
       - persist_to_workspace:
           root: ~/repo
