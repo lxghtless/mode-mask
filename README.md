@@ -14,7 +14,7 @@ npm i mode-mask -S
 
 ### Usage
 
-```
+```js
 const ModeMask = require('mode-mask')
 
 const modes = {
