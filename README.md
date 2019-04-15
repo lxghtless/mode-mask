@@ -9,7 +9,7 @@
 ### Install
 
 ```
-npm i mode-mask -S
+$ npm i mode-mask -S
 ```
 
 ### Usage
