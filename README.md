@@ -3,7 +3,7 @@
 > Manage mode combinations
 
 
-[![npm version](https://badge.fury.io/js/mode-mask.svg)](https://badge.fury.io/js/mode-mask)  [![CircleCI](https://circleci.com/gh/lxghtless/mode-mask/tree/master.svg?style=svg)](https://circleci.com/gh/lxghtless/mode-mask/tree/master)  [![codecov](https://codecov.io/gh/lxghtless/mode-mask/branch/master/graph/badge.svg)](https://codecov.io/gh/lxghtless/mode-mask)
+[![npm version](https://badge.fury.io/js/mode-mask.svg)](https://badge.fury.io/js/mode-mask)  [![CircleCI](https://circleci.com/gh/lxghtless/mode-mask/tree/master.svg?style=svg)](https://circleci.com/gh/lxghtless/mode-mask/tree/master)  [![codecov](https://codecov.io/gh/lxghtless/mode-mask/branch/master/graph/badge.svg)](https://codecov.io/gh/lxghtless/mode-mask) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 
 
 ### Install
