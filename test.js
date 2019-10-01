@@ -34,7 +34,7 @@ test('ModeMask instance includes expected modes combinations', t => {
 	t.truthy(modeMask.indexOf(modes.READ + modes.WRITE + modes.AUTO_CREATE));
 });
 
-test("ModeMask instance does't include unexpected modes", t => {
+test('ModeMask instance does\'t include unexpected modes', t => {
 	const modes = {
 		READ: 1,
 		WRITE: 2,
