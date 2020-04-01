@@ -1,6 +1,6 @@
 {
     "name": "mode-mask",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Manage mode and permissions with masks/flags",
     "repository": {
         "type": "git",
