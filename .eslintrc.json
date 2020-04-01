@@ -1,0 +1,16 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+    "rules": {
+        "@typescript-eslint/member-delimiter-style": [0, {
+            "multiline": {
+              "delimiter": "none",
+              "requireLast": false
+            },
+            "singleline": {
+              "delimiter": "comma",
+              "requireLast": false
+            }
+          }]
+    }
+}

@@ -5,66 +5,67 @@
 version: 2.1
 
 defaults: &defaults
-  working_directory: ~/repo
-  docker:
-    - image: circleci/node:10.15
+    working_directory: ~/repo
+    docker:
+        - image: circleci/node:12.16
 
 orbs:
-  codecov: codecov/codecov@1.0.4
+    codecov: codecov/codecov@1.0.4
 
 jobs:
-  test:
-    <<: *defaults  
-    steps:
-      - checkout
+    test:
+        <<: *defaults
+        steps:
+            - checkout
 
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-    # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "package.json" }}
+                      # fallback to using the latest cache if no exact match is found
+                      - v1-dependencies-
+            - run: yarn
+            - run:
+                  name: Run tests
+                  command: yarn test
+            - run:
+                  name: Run build
+                  command: yarn build
+            - save_cache:
+                  paths:
+                      - node_modules
+                  key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: npm install
-      - run:
-          name: Run tests
-          command: npm test
+            - store_artifacts:
+                  path: coverage
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+            - codecov/upload:
+                  file: coverage/lcov.info
 
-      - store_artifacts:
-          path: coverage
+            - persist_to_workspace:
+                  root: ~/repo
+                  paths: .
+    deploy:
+        <<: *defaults
+        steps:
+            - attach_workspace:
+                  at: ~/repo
+            - run:
+                  name: Authenticate with registry
+                  command: echo "auth........"
+            - run:
+                  name: Publish package
+                  command: echo "would have published"
 
-      - codecov/upload:
-          file: coverage/lcov.info
-
-      - persist_to_workspace:
-          root: ~/repo
-          paths: .
-  deploy:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
-      - run:
-          name: Publish package
-          command: npm publish
-            
 workflows:
-  version: 2
-  test-deploy:
-    jobs:
-      - test
-      - deploy:
-          requires:
+    version: 2
+    test-deploy:
+        jobs:
             - test
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
+            - deploy:
+                  requires:
+                      - test
+                  filters:
+                      tags:
+                          only: /^v.*/
+                      branches:
+                          ignore: /.*/
