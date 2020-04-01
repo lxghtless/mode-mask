@@ -48,3 +48,5 @@
     t.truthy(mask.fromValues(['READ', 'WRITE']))
     t.truthy(mask.fromValues(['read', 'Write'], true))
 ```
+
+### Also published as a GitHub Package `@lxghtless/mode-mask` registry: https://npm.pkg.github.com/
