@@ -16,11 +16,10 @@
         "mask"
     ],
     "scripts": {
-        "build": "rimraf dist && tsc -p tsconfig.build.json",
+        "build": "rimraf dist && tsc",
         "test": "eslint ./src/**.* && nyc ava",
         "clean": "rimraf .nyc_output coverage dist",
-        "lint": "tsc --noEmit && eslint ./src/**.* --fix",
-        "build-docs": "typedoc --out docs src"
+        "lint": "tsc --noEmit && eslint ./src/**.* --fix"
     },
     "main": "dist/index.js",
     "files": [
@@ -73,8 +72,8 @@
             "test/*.ts"
         ],
         "cache": true,
-        "concurrency": 5,
-        "failFast": true,
+        "concurrency": 2,
+        "failFast": false,
         "verbose": true
     }
 }

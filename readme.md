@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/mode-mask"><img src="https://img.shields.io/npm/v/mode-mask?color=blue"/></a>&nbsp;<a href="https://circleci.com/gh/lxghtless/mode-mask/tree/master"><img src="https://circleci.com/gh/lxghtless/mode-mask/tree/master.svg?style=svg"/></a>&nbsp;<a href="https://codecov.io/gh/lxghtless/mode-mask"><img src="https://codecov.io/gh/lxghtless/mode-mask/branch/master/graph/badge.svg"/></a>&nbsp;<a href="https://www.typescriptlang.org/"><img src="https://badgen.net/badge/icon/typescript?icon=typescript&label" /></a>&nbsp;<a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/mode-mask"><img src="https://img.shields.io/npm/v/mode-mask?color=blue"/></a>&nbsp;<a href="https://www.typescriptlang.org/"><img src="https://badgen.net/badge/icon/typescript?icon=typescript&label" /></a>&nbsp;<a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" /></a>
 </p>
 
 <p align="center">

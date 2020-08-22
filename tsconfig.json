@@ -1,15 +1,15 @@
 {
     "compilerOptions": {
         "strict": true,
-        "target": "ES2019",
-        "lib": ["ES2019"],
+        "target": "ES2018",
+        "lib": ["ES2018"],
         "module": "commonjs",
         "moduleResolution": "node",
         "noEmit": false,
-        "allowJs": true,
+        "allowJs": false,
         "alwaysStrict": true,
         "esModuleInterop": true,
-        "isolatedModules": true,
+        "isolatedModules": false,
         "forceConsistentCasingInFileNames": true,
         "noFallthroughCasesInSwitch": true,
         "allowSyntheticDefaultImports": true,
@@ -17,8 +17,11 @@
         "noUnusedParameters": true,
         "resolveJsonModule": true,
         "skipLibCheck": true,
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "outDir": "dist",
+        "declaration": true,
+        "sourceMap": true
     },
     "exclude": ["node_modules"],
-    "include": ["**/*.ts"]
+    "include": ["src/*.ts"]
 }

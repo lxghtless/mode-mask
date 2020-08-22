@@ -2,25 +2,14 @@
     @module: interfaces
 */
 
-export interface StrNumMap {
-    [x: string]: number
-}
-
-export interface MaskDatum {
-    sum: number
-    values: string[]
-    nums: number[]
-    map: StrNumMap
-}
-
 export interface Mask {
     [x: number]: MaskDatum
     indexOf(n: number): MaskDatum | undefined
     fromValues(values: string[], ignoreCase?: boolean): MaskDatum | undefined
 }
 
-export interface MaskOptions {
-    values: string[]
+export interface MaskCache {
+    [x: string]: Mask
 }
 
 export interface MaskContext extends MaskOptions {
@@ -30,6 +19,17 @@ export interface MaskContext extends MaskOptions {
     pw2s: number[]
 }
 
-export interface MaskCache {
-    [x: string]: Mask
+export interface MaskDatum {
+    sum: number
+    values: string[]
+    nums: number[]
+    map: StrNumMap
+}
+
+export interface MaskOptions {
+    values: string[]
+}
+
+export interface StrNumMap {
+    [x: string]: number
 }
