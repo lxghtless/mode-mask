@@ -2,6 +2,9 @@ import {Mask, MaskDatum} from './interfaces'
 
 import {arraysMatch} from './helper'
 
+/**
+    @class MdMask
+ */
 export class MdMask implements Mask {
     [x: number]: MaskDatum
     indexOf(n: number): MaskDatum | undefined {

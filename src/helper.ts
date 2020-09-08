@@ -2,11 +2,38 @@
     @module: helper
 */
 
-import {MaskContext} from './interfaces'
+import {MaskContext, ValidateMaskModesResult} from './interfaces'
 import {MdMask} from './mask'
 
 export const calcSum = (nums: number[]): number => {
     return nums.reduce((total: number, num: number) => total + num)
+}
+
+export const isPowerOf2 = (n: number): boolean => {
+    if (typeof n !== 'number' || !Number.isInteger(n)) {
+        return false
+    }
+
+    return n !== 0 && (n & (n - 1)) === 0
+}
+
+export const validateMaskModes = (modes: {
+    [x: string]: number
+}): ValidateMaskModesResult => {
+    const errors: string[] = []
+
+    for (const [value, n] of Object.entries(modes)) {
+        if (!isPowerOf2(n)) {
+            errors.push(
+                `numeric value of ${n} for "${value}" is not a power of 2`
+            )
+        }
+    }
+
+    return {
+        errors,
+        isValid: errors.length === 0
+    }
 }
 
 export const emptyArray = (values: string[]): string | undefined => {

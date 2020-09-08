@@ -7,7 +7,10 @@ import {calcSum, validateAndCreateContext} from './helper'
 
 export type BuildMaskFunction = () => Mask
 
-export const buildMaskFactory = ({values}: MaskOptions): BuildMaskFunction => {
+export const buildMaskFactory = (
+    {values}: MaskOptions,
+    modesRef?: {[x: string]: number}
+): BuildMaskFunction => {
     const ctx = validateAndCreateContext(values)
     const {mask} = ctx
     let {map, combos, pw2s} = ctx
@@ -28,6 +31,10 @@ export const buildMaskFactory = ({values}: MaskOptions): BuildMaskFunction => {
                     combos.push(values[j])
                     pw2s.push(pw2)
                     map[values[j]] = pw2
+
+                    if (modesRef) {
+                        modesRef[values[j]] = pw2
+                    }
                 }
             }
 

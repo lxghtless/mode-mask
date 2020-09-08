@@ -13,3 +13,4 @@ export {
 } from './interfaces'
 export {MdMask} from './mask'
 export {registerMask, resolveMask} from './registry'
+export {MaskProvider} from './mask-provider'

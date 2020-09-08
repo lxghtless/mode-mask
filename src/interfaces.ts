@@ -4,8 +4,8 @@
 
 export interface Mask {
     [x: number]: MaskDatum
-    indexOf(n: number): MaskDatum | undefined
     fromValues(values: string[], ignoreCase?: boolean): MaskDatum | undefined
+    indexOf(n: number): MaskDatum | undefined
 }
 
 export interface MaskCache {
@@ -32,4 +32,9 @@ export interface MaskOptions {
 
 export interface StrNumMap {
     [x: string]: number
+}
+
+export interface ValidateMaskModesResult {
+    errors: string[]
+    isValid: boolean
 }

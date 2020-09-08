@@ -16,66 +16,30 @@
         "mask"
     ],
     "scripts": {
-        "build": "rimraf dist && tsc",
-        "test": "eslint ./src/**.* && nyc ava",
+        "build": "rimraf dist && tsc --project src",
+        "test": "eslint ./src/**.* && intern",
         "clean": "rimraf .nyc_output coverage dist",
-        "lint": "tsc --noEmit && eslint ./src/**.* --fix"
+        "lint": "tsc --noEmit && eslint ./src/**.* ./test/**.* --fix"
     },
     "main": "dist/index.js",
     "files": [
         "dist",
-        "src"
+        "src/*.ts"
     ],
     "dependencies": {},
     "devDependencies": {
         "@types/node": "14.6.4",
         "@typescript-eslint/eslint-plugin": "^2.26.0",
         "@typescript-eslint/parser": "^2.26.0",
-        "@typescript-eslint/typescript-estree": "^4.0.1",
-        "ava": "^3.12.1",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.10.1",
         "eslint-plugin-prettier": "^3.1.2",
         "husky": "^4.3.0",
-        "minimist": "^1.2.2",
-        "nyc": "^15.0.0",
+        "intern": "^4.8.7",
         "prettier": "^2.0.2",
         "rimraf": "^3.0.2",
         "ts-node": "^9.0.0",
-        "typescript": "^4.0.2",
-        "typescript-eslint": "^0.0.1-alpha.0"
-    },
-    "nyc": {
-        "all": true,
-        "reporter": [
-            "lcov",
-            "text"
-        ],
-        "extension": [
-            ".ts"
-        ],
-        "require": [
-            "ts-node/register"
-        ],
-        "include": [
-            "src/*.ts"
-        ]
-    },
-    "ava": {
-        "extensions": [
-            "ts",
-            "js"
-        ],
-        "require": [
-            "ts-node/register"
-        ],
-        "files": [
-            "test/*.ts"
-        ],
-        "cache": true,
-        "concurrency": 2,
-        "failFast": false,
-        "verbose": true
+        "typescript": "^4.0.2"
     },
     "husky": {
         "hooks": {

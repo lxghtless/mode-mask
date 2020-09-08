@@ -18,10 +18,10 @@
         "resolveJsonModule": true,
         "skipLibCheck": true,
         "noImplicitAny": true,
+        "outDir": "../dist",
         "declaration": true,
-        "sourceMap": true,
-        "types": ["intern"]
+        "sourceMap": true
     },
     "exclude": ["node_modules"],
-    "include": ["src/*.ts", "test/*.ts"]
+    "include": ["*.ts"]
 }
